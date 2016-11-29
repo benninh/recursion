@@ -10,7 +10,7 @@ var parseJSON = function(json) {
 
   // initialize result holder of the parsed JSON
   var parsedResult = 0;
-
+  console.log(json[0]);
   // if "null" return null
   if(json === "null"){
   	parsedResult = null;
@@ -26,7 +26,7 @@ var parseJSON = function(json) {
   	parsedResult = false;
   	//console.log("returned: " + parsedResult);
   }
-  
+
   // if "number" return number
 
   // if "string" return string
