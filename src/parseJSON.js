@@ -11,13 +11,13 @@ var parseJSON = function(json) {
   // initialize result holder of the parsed JSON
   var parsedResult = 0;
   console.log(json[0]);
-  // if "null" return null
+  // if "null" handle nulls
   if(json === "null"){
   	parsedResult = null;
   	//console.log("returned: " + parsedResult);
   }
 
-  // if "boolean" return boolean
+  // if "boolean" handle booleans
   if(json === "true"){
   	parsedResult = true;
   	//console.log("returned: " + parsedResult);
@@ -27,10 +27,22 @@ var parseJSON = function(json) {
   	//console.log("returned: " + parsedResult);
   }
 
-  // if "number" return number
+  // if "number" handle numbers
 
-  // if "string" return string
+  // if "string" handle strings
+  if(json[0] === '"'){
 
+  }
+
+  //if "[...]" handle arrays
+  if(json[0] === "["){
+
+  }
+
+  //if "{...}" handle objects
+  if(json[0] === "{"){
+
+  }
 
   //return parsed JSON
   return parsedResult;
