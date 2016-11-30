@@ -57,11 +57,11 @@ var getElementsByClassName = function(className
 	// _.each([].slice.call) call is redundant because nodes have a native forEach to use*/
   };
 
-  readNode(window.document);
+  //readNode(window.document);
   // readNode(document.body);
 
 
   // return results array after we finish pushing to it
-  console.log('resultsArray ', resultsArray)
+  //console.log('resultsArray ', resultsArray)
   return resultsArray;
 };
