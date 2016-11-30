@@ -36,18 +36,31 @@ var getElementsByClassName = function(className
   var readNode = function(thisNode){
     //console.log(thisNode.classList !== undefined ?  thisNode.classList.contains(className) : 'undefined')
 
+    /*
+		THIS SECTION HANDLES WHETHER OR NOT
+		A NODE HOLDS A LIST OF CLASSES
+    */
     if (thisNode.classList !== undefined) {
       if(thisNode.classList.contains(className)) {
         resultsArray.push(thisNode)
       }
     }
-
+    /*
+		THIS SECTION HANDLES WHETHER OR NOT
+		A NODE HAS CHILD NODES
+    */
     if (thisNode.hasChildNodes()) {
       // _.each(Array.prototype.slice.call(thisNode.childNodes), function(item) {
       thisNode.childNodes.forEach(function(item) { //reading nodes has native forEach that is usable
           readNode(item);
       });
     }
+
+    /*
+		THE TWO SECTIONS WORK TOGETHER, INDEPENDENTLY, TO 
+		1. CHECK FOR A CLASS LIST TO LOOK FOR A CLASS NAME
+		2. CHECK FOR CHILD NODES TO CONTINUE RECURSION
+    */
 
     /*if (thisNode.hasChildNodes()) {
       _.each(Array.prototype.slice.call(thisNode.childNodes), function(item) {
@@ -57,7 +70,7 @@ var getElementsByClassName = function(className
 	// _.each([].slice.call) call is redundant because nodes have a native forEach to use*/
   };
 
-  //readNode(window.document);
+  readNode(window.document);
   // readNode(document.body);
 
 
